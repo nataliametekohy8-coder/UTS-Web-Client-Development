@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galeri Sunset | Natalia Metekohy</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="galeri-page">
+
+<nav class="site-nav" id="siteNav">
+  <a href="beranda.html" class="nav-logo">Natalia <span>M.</span></a>
+  <ul class="nav-links">
+    <li><a href="beranda.html">Beranda</a></li>
+    <li><a href="perkenalan.html">Perkenalan</a></li>
+    <li><a href="galeri.html" class="active">Galeri</a></li>
+    <li><a href="musik.html">Musik</a></li>
+  </ul>
+</nav>
+
+<!-- ══ HERO GALERI ══════════════════════════════════ -->
+<header class="galeri-hero">
+  <div class="galeri-hero-orb"></div>
+  <span class="sticker top-right">📸</span>
+  <div class="galeri-hero-text">
+    <div class="label">Galeri foto saya</div>
+    <h1>Sunset &<br><em>langit sore</em></h1>
+    <p>
+      Kumpulan momen <strong>langit yang berubah warna</strong> saat saya berkeliling
+      pantai &mdash; dari <b>Pantai Bintang, Pulau Pari</b> sampai tepi laut Ambon.
+      Setiap foto punya <i>ceritanya sendiri</i>.
+    </p>
+  </div>
+</header>
+
+<!-- ══ GALERI GRID ══════════════════════════════════ -->
+<section class="galeri-grid-section">
+  <div class="inner">
+    <div class="label" style="color:var(--muted);">
+      <span style="background:var(--muted);display:block;width:28px;height:1px;"></span>
+      Klik untuk memperbesar
+    </div>
+    <h2 class="serif" style="font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:36px;color:var(--ink);">
+      Koleksi foto saya
+    </h2>
+
+    <!-- Grid: bisa ganti background dengan url() setelah foto tersedia -->
+    <div class="gal-grid">
+      <!-- Baris 1 -->
+      <div class="gal-item span2 gal-bg1" style="grid-row:span 2;">
+        <img src="c:\Users\Ona Lie\Downloads\ba936dbc-8316-4bdd-87a7-e7d5b3d7e616.jpg" alt="langit oranye dengan awan tebal" onerror="this.style.display='none'">
+        <span>langit oranye dengan awan tebal</span>
+      </div>
+      <div class="gal-item gal-bg2">
+        <img src="c:\Users\Ona Lie\Downloads\4a15c741-0289-46be-b245-56d60a8a6cab.jpg" alt="Sunset Pantai Bintang Pulau Pari" onerror="this.style.display='none'">
+        <span>Sunset Pantai Bintang Pulau Pari</span>
+      </div>
+      <div class="gal-item gal-bg3">
+        <img src="c:\Users\Ona Lie\Downloads\877307fb-3ff4-4287-be16-311c2352838e.jpg" alt="langit biru dengan matahari" onerror="this.style.display='none'">
+        <span>langit biru dengan matahari</span>
+      </div>
+      <!-- Baris 2 -->
+      <div class="gal-item gal-bg4">
+        <img src="c:\Users\Ona Lie\Downloads\cef22481-57c7-4f00-bdce-787dcf72de9d.jpg" alt="langit oranye" onerror="this.style.display='none'">
+        <span>langit oranye</span>
+      </div>
+      <div class="gal-item gal-bg5">
+        <img src="c:\Users\Ona Lie\Downloads\f43e4df5-ad29-42f5-b1f4-bd6a28836849.jpg" alt="Langit pink" onerror="this.style.display='none'">
+        <span>Langit pink keunguan</span>
+      </div>
+      <div class="gal-item gal-bg6">
+        <img src="c:\Users\Ona Lie\Downloads\c4d9d373-3025-43cf-9f48-0c6d2c2530da.jpg" alt="Golden hour" onerror="this.style.display='none'">
+        <span>Golden hour di ombak</span>
+      </div>
+    </div>
+
+
+
+<!-- ══ NEXT PAGE ════════════════════════════════════ -->
+<section class="home-closer">
+  <h2 class="serif">Mau dengar musik favorit saya juga?</h2>
+  <p>Kunjungi halaman musik untuk daftar lagu dan player Dewa19.</p>
+  <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+    <a href="musik.html" class="btn btn-coral">Halaman Musik →</a>
+    <a href="perkenalan.html" class="btn btn-ghost light">Perkenalan</a>
+    <a href="beranda.html" class="btn btn-ghost light">← Beranda</a>
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 <strong style="color:var(--sunset)">Natalia Metekohy</strong> &mdash;
+  UTS Web Client Development, Universitas Cakrawala.
+</footer>
+
+<script>
+  const nav = document.getElementById('siteNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+</script>
+</body>
+</html>
