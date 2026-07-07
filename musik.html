@@ -242,7 +242,74 @@
       const target = document.querySelector(a.getAttribute('href'));
       if (target) { e.preventDefault(); target.scrollIntoView({behavior:'smooth'}); }
     });
-  });
+  }); 
+  
+#TAMBAHAN
+const requestForm = document.getElementById('requestForm');
+const requestList = document.getElementById('requestList');
+const formError = document.getElementById('formError');
+const STORAGE_KEY = 'dewa19_song_requests';
+
+function loadRequests() {
+  try {
+    return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+  } catch (e) {
+    return [];
+  }
+}
+
+function saveRequests(requests) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(requests));
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+function renderRequests() {
+  const requests = loadRequests();
+  if (requests.length === 0) {
+    requestList.innerHTML = '<p class="request-empty">Belum ada request. Jadilah yang pertama!</p>';
+    return;
+  }
+  requestList.innerHTML = '<h3>Request Terbaru</h3>' + requests.map(r => `
+    <div class="request-item">
+      <div class="request-item-head">
+        <strong>${escapeHtml(r.judul)}</strong>
+        <span class="request-mood">${escapeHtml(r.mood)}</span>
+      </div>
+      <div class="request-item-sub">dari ${escapeHtml(r.nama)}</div>
+      ${r.pesan ? `<p class="request-item-msg">"${escapeHtml(r.pesan)}"</p>` : ''}
+    </div>
+  `).join('');
+}
+
+requestForm.addEventListener('submit', function (e) {
+  e.preventDefault();
+  formError.textContent = '';
+
+  if (!requestForm.checkValidity()) {
+    requestForm.reportValidity();
+    return;
+  }
+
+  const nama = document.getElementById('reqNama').value.trim();
+  const email = document.getElementById('reqEmail').value.trim();
+  const judul = document.getElementById('reqJudul').value.trim();
+  const mood = document.getElementById('reqMood').value;
+  const pesan = document.getElementById('reqPesan').value.trim();
+
+  const requests = loadRequests();
+  requests.unshift({ nama, email, judul, mood, pesan, tanggal: new Date().toISOString() });
+  saveRequests(requests);
+
+  requestForm.reset();
+  renderRequests();
+});
+
+renderRequests();
 </script>
 </body>
 </html>
