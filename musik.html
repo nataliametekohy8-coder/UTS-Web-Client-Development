@@ -166,6 +166,55 @@
     </div>
   </div>
 </section>
+  
+  #TAMBAHAN!
+  <section class="request-section" id="request">
+  <div class="request-inner">
+    <div class="label">Request lagu</div>
+    <h2>Request Lagu Dewa19 Favoritmu</h2>
+    <p>Punya lagu Dewa19 yang belum ada di daftar? Kirim request-mu di sini,
+       lagu yang paling banyak diminta bakal aku putar di playlist berikutnya.</p>
+
+    <form id="requestForm" class="request-form" novalidate>
+      <div class="form-row">
+        <label for="reqNama">Nama</label>
+        <input type="text" id="reqNama" name="nama" required minlength="2" placeholder="Nama kamu">
+      </div>
+
+      <div class="form-row">
+        <label for="reqEmail">Email</label>
+        <input type="email" id="reqEmail" name="email" required placeholder="nama@email.com">
+      </div>
+
+      <div class="form-row">
+        <label for="reqJudul">Judul Lagu Dewa19</label>
+        <input type="text" id="reqJudul" name="judul" required minlength="2" placeholder="Misal: Separuh Nafas">
+      </div>
+
+      <div class="form-row">
+        <label for="reqMood">Mood</label>
+        <select id="reqMood" name="mood" required>
+          <option value="">Pilih mood</option>
+          <option value="Santai">Santai</option>
+          <option value="Nostalgia">Nostalgia</option>
+          <option value="Galau">Galau</option>
+          <option value="Semangat">Semangat</option>
+        </select>
+      </div>
+
+      <div class="form-row form-row-full">
+        <label for="reqPesan">Pesan (opsional)</label>
+        <textarea id="reqPesan" name="pesan" rows="3" maxlength="200" placeholder="Kenapa kamu suka lagu ini?"></textarea>
+      </div>
+
+      <div id="formError" class="form-error" role="alert" aria-live="polite"></div>
+
+      <button type="submit" class="btn btn-coral">Kirim Request</button>
+    </form>
+
+    <div id="requestList" class="request-list"></div>
+  </div>
+</section>
 
 <section class="musik-closer">
   <h2>Terima kasih sudah mampir</h2>
